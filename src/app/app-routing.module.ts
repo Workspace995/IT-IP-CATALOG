@@ -4,7 +4,7 @@ import { CatalogPageComponent } from './catalog-page/catalog-page.component';
 import { DetailPageComponent } from './detail-page/detail-page.component';
 
 export const routes: Routes = [
-  { path: '', component: LandingPageComponent },  // Root path for the landing page
+  { path: '', component: LandingPageComponent },
   { path: 'catalog', component: CatalogPageComponent },
-  { path: 'details', component: DetailPageComponent }
+  { path: 'details', component: DetailPageComponent }  // Added route for detail page
 ];

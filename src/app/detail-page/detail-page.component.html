@@ -1,0 +1,61 @@
+<div class="catalog-container">
+  <!-- Header with teal background and home icon -->
+  <div class="header-bar">
+    <img src="assets/home.png" alt="Home" class="home-icon" (click)="close()">
+    <h2 class="catalog-header">IT IP Catalog</h2>
+  </div>
+
+  <!-- Close button bar -->
+  <div class="close-bar">
+    <button (click)="close()" class="close-button">
+      <span>Close</span>
+      <img src="assets/cross-icon.png" alt="Close" class="close-icon">
+    </button>
+  </div>
+
+  <!-- General Details Section -->
+  <div class="detail-section">
+    <div class="section-header" (click)="toggleSection('generalDetails')">
+      <h3 class="section-title">General Details</h3>
+      <img src="assets/toggle-icon.png" alt="Toggle" class="toggle-icon" [class.rotate]="isSectionOpen('generalDetails')">
+    </div>
+    <div *ngIf="isSectionOpen('generalDetails')" class="section-content">
+      <p><strong>File Number:</strong> {{ patent.fileNo }}</p>
+      <p><strong>Patent Title:</strong> {{ patent.title }}</p>
+      <p><strong>Reference Number:</strong> {{ patent.referenceNumber }}</p>
+      <p><strong>Patent Number:</strong> {{ patent.patentNumber || 'N/A' }}</p>
+      <p><strong>Serial Number:</strong> {{ patent.serial }}</p>
+      <p><strong>Patent Status:</strong> {{ patent.patentStatus }}</p>
+      <p><strong>Filing Date:</strong> {{ patent.filingDate || 'N/A' }}</p>
+      <p><strong>Macro:</strong> {{ patent.macro }}</p>
+      <p><strong>Grant Date:</strong> {{ patent.grantDate || 'N/A' }}</p>
+      <p><strong>Country:</strong> {{ patent.country }}</p>
+      <p><strong>Inventors:</strong> {{ patent.inventors}}</p>
+      <p><strong>Patent Category:</strong> {{ patent.category }}</p>
+      <p><strong>Patent SubCategory:</strong> {{ patent.subCategory }}</p>
+      <p><strong>Patent SubType:</strong> {{ patent.subtype }}</p>
+    </div>
+  </div>
+
+  <!-- Summary and Use Case Section -->
+  <div class="detail-section">
+    <div class="section-header" (click)="toggleSection('summaryUseCase')">
+      <h3 class="section-title">Summary & Use Case(s)</h3>
+      <img src="assets/toggle-icon.png" alt="Toggle" class="toggle-icon" [class.rotate]="isSectionOpen('summaryUseCase')">
+    </div>
+    <div *ngIf="isSectionOpen('summaryUseCase')" class="section-content">
+      <p>{{ patent.summary }}</p>
+    </div>
+  </div>
+
+  <!-- Claim Section -->
+  <div class="detail-section">
+    <div class="section-header" (click)="toggleSection('claim')">
+      <h3 class="section-title">Claim</h3>
+      <img src="assets/toggle-icon.png" alt="Toggle" class="toggle-icon" [class.rotate]="isSectionOpen('claim')">
+    </div>
+    <div *ngIf="isSectionOpen('claim')" class="section-content">
+      <p>{{ patent.claim }}</p>
+    </div>
+  </div>
+</div>

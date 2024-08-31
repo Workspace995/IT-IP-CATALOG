@@ -1,0 +1,303 @@
+/* Container for the entire catalog page */
+.catalog-container {
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background color */
+  color: #333; /* Dark text color for readability */
+  min-height: 100vh; /* Ensures the container covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+/* Wrapper for the table and filter menu */
+.content-wrapper {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between the table and filter menu */
+  width: 100%; /* Full width of the container */
+  gap: 20px; /* Space between the table and filter menu */
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Header bar styling */
+.header-bar {
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  background-color: #00695c; /* Teal background color */
+  padding: 40px; /* Increased padding for more height */
+  border-radius: 8px; /* Rounded corners to match the table */
+  margin-bottom: 20px; /* Space below the header */
+  position: relative; /* Positioning for absolute positioning of the home icon */
+  width: 100%; /* Make the header full width */
+}
+
+/* Home icon styling */
+/* Home icon styling */
+.home-icon {
+  position: absolute;
+  left: 40px; /* Increase left position for more space */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  width: 30px; /* Set the width of the icon */
+  height: 30px; /* Set the height of the icon */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-left: 20px; /* Added margin for more spacing */
+}
+
+/* Container for search bar and button */
+.search-container {
+  display: flex; /* Aligns items in a row */
+  align-items: center; /* Centers items vertically */
+  margin: 0 20px; /* Adds space around the search container */
+  gap: 10px; /* Space between search bar and button */
+
+}
+
+/* Search bar styling */
+.search-bar {
+  padding: 10px; /* Padding for input */
+  font-size: 1em; /* Font size for input text */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  width: 250px; /* Set a width for the search bar */
+  box-sizing: border-box; /* Ensures padding does not increase the width */
+  margin-right: 10px; /* Space between search bar and button */
+}
+
+/* Search button styling */
+.search-button {
+  padding: 10px 20px; /* Padding for button */
+  font-size: 1em; /* Font size for button text */
+  color: white; /* White text color */
+  background-color: #07ae9b; /* Teal background color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Hover effect for search button */
+.search-button:hover {
+  background-color: #0aa78c; /* Darker teal on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 120px; /* Smaller width for smaller screens */
+    font-size: 0.9em; /* Smaller font size for smaller screens */
+  }
+
+  .search-button {
+    padding: 8px 15px; /* Smaller padding for smaller screens */
+    font-size: 0.9em; /* Smaller font size for smaller screens */
+  }
+
+  .home-icon {
+    left: 20px; /* Adjusted for smaller screens */
+    width: 30px; /* Smaller icon for smaller screens */
+    height: 30px;
+  }
+}
+
+
+/* Header text styling */
+.catalog-header {
+  color: white; /* White text color */
+  margin: 0; /* Remove default margin */
+  font-size: 1.8em; /* Font size for the header */
+}
+
+/* Table styling */
+.catalog-table {
+  flex-grow: 1; /* Allow table to grow and fill available space */
+  border-collapse: separate; /* Separate borders for rounded corners */
+  border-spacing: 0 10px; /* Add spacing between rows */
+  background-color: white; /* White background for the table */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensures content doesn't overflow the rounded corners */
+}
+
+/* Table header styling */
+.catalog-table th {
+  background-color: #00695c; /* Teal header background */
+  color: white; /* White text color */
+  padding: 15px; /* Padding for cells */
+  text-align: left; /* Left align text */
+  font-weight: bold; /* Bold text */
+  border-top-left-radius: 8px; /* Rounded top-left corner */
+  border-top-right-radius: 8px; /* Rounded top-right corner */
+}
+
+/* Table body styling */
+.catalog-table td {
+  padding: 15px; /* Padding for cells */
+  border-bottom: 1px solid #ddd; /* Light border between rows */
+  text-align: left; /* Left align text */
+  border-radius: 8px; /* Rounded corners for rows */
+}
+
+/* Filter icon styling */
+.filter-icon {
+  width: 40px; /* Set the width of the filter icon */
+  height: 40px; /* Set the height of the filter icon */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Eye icon styling */
+.eye-icon {
+  width: 30px; /* Set the width of the eye icon */
+  height: 30px; /* Set the height of the eye icon */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Alternate row coloring */
+.catalog-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Light gray for even rows */
+}
+
+/* Table row hover effect */
+.catalog-table tr:hover {
+  background-color: #e0f7fa; /* Light teal background on hover */
+}
+
+/* Styling for the filter menu */
+.filter-menu {
+  width: 250px; /* Fixed width for filter menu */
+  background-color: #ffffff; /* White background */
+  padding: 20px; /* Padding around the content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  z-index: 1000; /* Ensure it stays above other elements */
+  display: flex; /* Display as flexbox */
+  flex-direction: column; /* Column layout */
+  gap: 15px; /* Space between items */
+}
+
+/* Header for filter menu */
+.filter-header {
+  display: flex; /* Flex layout */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 10px; /* Space below header */
+}
+
+.filter-header h4 {
+  margin: 0; /* Remove margin */
+  font-size: 1.2em; /* Font size */
+}
+
+/* Styling for applied filters */
+.applied-filters {
+  margin-bottom: 10px; /* Space below the applied filters section */
+  display: flex; /* Display as flexbox */
+  align-items: center; /* Center items vertically */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  gap: 10px; /* Space between items */
+}
+
+/* Individual filter tag styling */
+.filter-tag {
+  background-color: #e0f7fa; /* Light teal background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 5px 10px; /* Padding inside the tag */
+  display: flex; /* Display as flexbox */
+  align-items: center; /* Center items vertically */
+  border:1px solid black;
+}
+
+.filter-tag span {
+  margin-right: 5px; /* Space to the right of the text */
+  color: #007bff; /* Blue text color */
+}
+
+/* Button styling for removing a filter */
+.filter-tag button {
+  border: none; /* Remove default border */
+  background: transparent; /* Transparent background */
+  color: #d32f2f; /* Red color */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 1em; /* Font size */
+}
+
+/* Dropdown styling */
+.filter-menu select {
+  padding: 8px; /* Padding inside the dropdown */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 5px; /* Space above the dropdown */
+}
+
+/* Input styling for filter menu */
+.filter-menu input {
+  padding: 8px; /* Padding inside the input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  margin-top: 5px; /* Space above the input */
+}
+
+/* Button styling for filter menu */
+.filter-menu button {
+  padding: 10px 15px; /* Padding for buttons */
+  font-size: 0.9em; /* Font size for button text */
+  color: white; /* White text color */
+  background-color: #00695c; /* Teal background color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+/* Hover effect for buttons */
+.filter-menu button:hover {
+  background-color: #004d40; /* Darker teal on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column; /* Stack table and filter menu vertically */
+  }
+
+  .filter-menu {
+    width: 100%; /* Full width for smaller screens */
+    right: 0; /* Adjust right position */
+    top: 50px; /* Adjust top position */
+  }
+
+  .filter-menu button {
+    font-size: 0.8em; /* Smaller font size for smaller screens */
+  }
+
+  .catalog-table {
+    width: 100%; /* Full width for table on smaller screens */
+  }
+}
+/* Pagination controls within the table */
+.pagination-controls {
+  text-align: left; /* Align to the left */
+  padding: 10px; /* Padding around the pagination controls */
+}
+
+.pagination-controls button {
+  padding: 8px 12px; /* Adjust padding inside the button */
+  font-size: 0.9em; /* Font size for button text */
+  color: white; /* White text color */
+  background-color: #00695c; /* Teal background color */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+  margin-right: 5px; /* Space between buttons */
+}
+
+.pagination-controls button:disabled {
+  background-color: #ccc; /* Light gray background for disabled buttons */
+  cursor: not-allowed; /* Not-allowed cursor for disabled buttons */
+}
+
+.pagination-controls span {
+  font-size: 1em; /* Font size for pagination text */
+  margin-right: 5px; /* Space between text and next button */
+}

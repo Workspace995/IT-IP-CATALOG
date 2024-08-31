@@ -1,0 +1,133 @@
+<div class="catalog-container">
+  <!-- Header with teal background and home icon -->
+  <div class="header-bar">
+    <!-- Link to the landing page -->
+      <img src="assets/home.png" alt="Home" class="home-icon" (click)="navigateToHome()">
+
+    <div class="search-container">
+      <input type="text" [(ngModel)]="searchQuery" (input)="performSearch()" placeholder="Search across all fields..." class="search-bar">
+
+    </div>
+    <h2 class="catalog-header">IT IP Catalog</h2>
+  </div>
+
+  <!-- Applied Filters Display -->
+  <div class="applied-filters" *ngIf="hasFilters()">
+    <h4>Applied Filters:</h4>
+    <div class="filter-tag" *ngIf="filters.country">
+      <span>{{ filters.country }}</span>
+      <button (click)="clearSpecificFilter('country')">x</button>
+    </div>
+    <div class="filter-tag" *ngIf="filters.patentStatus">
+      <span>{{ filters.patentStatus }}</span>
+      <button (click)="clearSpecificFilter('patentStatus')">x</button>
+    </div>
+    <div class="filter-tag" *ngIf="filters.macro">
+      <span>{{ filters.macro }}</span>
+      <button (click)="clearSpecificFilter('macro')">x</button>
+    </div>
+    <div class="filter-tag" *ngIf="filters.category">
+      <span>{{ filters.category }}</span>
+      <button (click)="clearSpecificFilter('category')">x</button>
+    </div>
+    <div class="filter-tag" *ngIf="filters.subCategory">
+      <span>{{ filters.subCategory }}</span>
+      <button (click)="clearSpecificFilter('subCategory')">x</button>
+    </div>
+  </div>
+
+  <div class="content-wrapper"> <!-- New wrapper to align table and filter menu side by side -->
+    <!-- Table with catalog data -->
+    <table class="catalog-table">
+      <thead>
+        <tr>
+          <td colspan="6" class="pagination-controls">
+            <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+            <span>Page {{currentPage}} of {{totalPages}}</span>
+            <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+          </td>
+        </tr>
+        <tr>
+          <th>Patent Title</th>
+          <th>File #</th>
+          <th>Application</th>
+          <th>Macro</th>
+          <th>Category</th>
+          <th>
+            <img src="assets/filter-icon.png" alt="Filter" class="filter-icon" (click)="toggleFilterMenu()">
+          </th> <!-- Filter icon beside category -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patent of displayedPatents">
+          <td>{{ patent.title }}</td>
+          <td>{{ patent.fileNo }}</td>
+          <td>{{ patent.application }}</td>
+          <td>{{ patent.macro }}</td>
+          <td>{{ patent.category }}</td>
+          <td>
+            <img src="assets/eye-icon.png" alt="View" class="eye-icon" (click)="viewDetails(patent)">
+          </td> <!-- Eye icon column -->
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Filter Menu (Initially hidden, shown on click) -->
+    <div class="filter-menu" *ngIf="showFilterMenu">
+      <div class="filter-header">
+        <h4>Filter selection:</h4>
+        <button (click)="toggleFilterMenu()">Close</button>
+      </div>
+
+      <!-- Patent Title Search within Filter Menu -->
+      <label>
+        Search in Patent Title
+        <input type="text" [(ngModel)]="filters.title" (input)="applyFilters()" placeholder="Search in Patent Title">
+      </label>
+
+      <label>
+        Country
+        <select [(ngModel)]="filters.country" (change)="applyFilters()">
+          <option value="">All</option>
+          <option *ngFor="let country of countryOptions" [value]="country">{{ country }}</option>
+        </select>
+      </label>
+
+      <label>
+        Patent Status
+        <select [(ngModel)]="filters.patentStatus" (change)="applyFilters()">
+          <option value="">All</option>
+          <option *ngFor="let status of statusOptions" [value]="status">{{ status }}</option>
+        </select>
+      </label>
+
+      <label>
+        Macro
+        <select [(ngModel)]="filters.macro" (change)="applyFilters()">
+          <option value="">All</option>
+          <option *ngFor="let macro of macroOptions" [value]="macro">{{ macro }}</option>
+        </select>
+      </label>
+
+      <label>
+        Category
+        <select [(ngModel)]="filters.category" (change)="applyFilters()">
+          <option value="">All</option>
+          <option *ngFor="let category of categoryOptions" [value]="category">{{ category }}</option>
+        </select>
+      </label>
+
+      <label>
+        Sub-Category
+        <select [(ngModel)]="filters.subCategory" (change)="applyFilters()">
+          <option value="">All</option>
+          <option *ngFor="let subcategory of subCategoryOptions" [value]="subcategory">{{ subcategory }}</option>
+        </select>
+      </label>
+
+      <!-- <button (click)="applyFilters()">Apply Filters</button> -->
+      <button (click)="clearFilters()">Clear Filters</button>
+    </div>
+  </div>
+</div>
+<app-chat></app-chat>

@@ -1,0 +1,146 @@
+/* Container for the entire detail page */
+.catalog-container {
+  padding: 20px;
+  background-color: #f5f5f5; /* Light background color */
+  color: #333; /* Dark text color for readability */
+  min-height: 100vh; /* Ensures the container covers the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+/* Header bar styling */
+.header-bar {
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  background-color: #00695c; /* Teal background color */
+  padding: 20px; /* Adjusted padding for height */
+  border-radius: 8px; /* Rounded corners to match the table */
+  margin-bottom: 10px; /* Space below the header */
+  position: relative; /* Positioning for absolute positioning of the home icon */
+  width: 100%; /* Make the header full width */
+}
+
+/* Home icon styling */
+.home-icon {
+  position: absolute;
+  left: 20px; /* Position it to the left */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  width: 30px; /* Set the width of the icon */
+  height: 30px; /* Set the height of the icon */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Make catalog header text white */
+.catalog-header {
+  color: white;
+  margin: 0; /* Remove default margin */
+  font-size: 1.8em; /* Font size for the header */
+}
+
+/* Close button bar styling */
+.close-bar {
+  display: flex;
+  justify-content: flex-end; /* Align the close button to the right */
+  width: 100%;
+  padding: 10px;
+  background-color: #00695c; /* Teal background color */
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Close button styling */
+.close-button {
+  background: none;
+  border: none;
+  color: white; /* White color for close text */
+  font-size: 1.2em;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Center icon and text */
+  gap: 8px; /* Space between icon and text */
+}
+
+/* Close icon styling */
+.close-icon {
+  width: 20px; /* Set the width of the icon */
+  height: 20px; /* Set the height of the icon */
+}
+
+/* Section styling */
+.detail-section {
+  width: 100%;
+  background-color: #e0f2f1; /* Light teal background */
+  margin-bottom: 10px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  overflow: hidden; /* Ensures content doesn't overflow the rounded corners */
+}
+
+/* Section header styling */
+.section-header {
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  position: relative; /* Position relative to align icon */
+  background-color: #00805e57; /* Teal background for headers */
+  color: white; /* White text color for headers */
+  font-weight: bold; /* Bold font for headers */
+  border-bottom: 2px solid #00695c; /* Border to differentiate from content */
+}
+
+/* Section header text styling */
+.section-title {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+/* Section header toggle icon */
+.toggle-icon {
+  width: 24px; /* Smaller icon size */
+  height: 24px; /* Smaller icon size */
+  position: absolute;
+  right: 20px; /* Align to the right of the section */
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* Section content styling */
+.section-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusts columns based on screen size */
+  gap: 20px;
+  padding: 15px;
+  text-align: left; /* Align text to the left */
+  background-color: #ffffff; /* White background for content */
+  color: #333; /* Dark text color for better readability */
+  border-top: 1px solid #e0e0e0; /* Subtle border for separation */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-bar {
+    padding: 20px;
+  }
+
+  .home-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .close-button {
+    font-size: 1em;
+  }
+
+  .section-header {
+    padding: 8px;
+  }
+}
+

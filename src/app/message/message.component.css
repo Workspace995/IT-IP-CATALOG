@@ -1,0 +1,54 @@
+/* message.component.css */
+
+/* Container for user message */
+.user-message-container {
+  display: flex;
+  justify-content: flex-end; /* Align container to the right */
+  max-width: 100%; /* Adjust width for user messages */
+  margin-right: 10px; /* Margin to keep it away from the edge */
+}
+
+/* User message styling */
+.user-message {
+  background-color: #f2f2f2; /* Light green for user message */
+  color: #004d40; /* Darker teal for text */
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  justify-content: flex-start; /* Align text to the left */
+}
+
+/* User icon styling */
+.user-icon {
+  margin-left: 10px; /* Space between text and icon */
+  order: 2; /* Ensure icon is on the right */
+}
+
+/* Container for chatbot message */
+.system-message-container {
+  display: flex;
+  justify-content: flex-start; /* Align container to the left */
+  max-width: 100%; /* Increase width for chatbot messages */
+  margin-left: 10px;
+   /* Margin to keep it away from the edge */
+}
+
+/* Chatbot message styling */
+.system-message {
+  background-color: #e0f7fa; /* Light teal for chatbot message */
+  color: #004d40; /* Darker teal for text */
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end; /* Align text to the right */
+}
+
+/* Chatbot icon styling */
+.chatbot-icon {
+  margin-right: 10px; /* Space between icon and text */
+  order: -1; /* Ensure icon is on the left */
+}
+.text-muted{
+  background-color: #f2f2f2;
+}
